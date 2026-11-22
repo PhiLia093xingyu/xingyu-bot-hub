@@ -1,0 +1,7 @@
+name: astrbot_plugin_callme
+display_name: 叫名字就应
+desc: 群消息正文里出现名字（不必在开头）就会唤醒并回复
+help: 在群里叫出设定的名字即可，无需 @；@ 别人昵称里的字不算
+version: v0.1.5
+author: <BOT_NAME>
+repo: ""

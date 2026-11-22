@@ -1,0 +1,7 @@
+name: astrbot_plugin_local_sd
+display_name: 本地画图
+desc: 用本机显卡跑 SD1.5，agent 可以自己画图；local_draw 工具 + /画画 命令
+help: /画画 1girl, cat ears, orange hair ；/画图状态 看 worker 和显存状态
+version: v0.1.0
+author: <BOT_NAME>
+repo: ""

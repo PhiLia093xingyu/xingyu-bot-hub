@@ -1,0 +1,5 @@
+websockets>=12
+frida>=16
+pilk==0.2.4
+psutil>=5.9
+Pillow>=10

@@ -1,0 +1,7 @@
+name: astrbot_plugin_anime_pics
+display_name: 二次元搜图
+desc: pixiv / yande.re / konachan 搜图，走本机代理，抓到图直接发进会话
+help: /搜图 猫耳 橙发 ；/搜图状态 查看代理与 cookie 配置
+version: v0.1.0
+author: <BOT_NAME>
+repo: ""

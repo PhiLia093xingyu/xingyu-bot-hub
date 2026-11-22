@@ -1,0 +1,31 @@
+# build/runtime
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# runtime data
+logs/
+state/
+config/hook.json
+state.json
+*.log
+
+# secrets
+.env
+*.token
+cmd_config.json
+
+# binaries & archives
+*.zip
+*.7z
+*.rar
+*.dll
+*.exe
+*.pdb
+*.lib
+*.obj
+
+# OS
+Thumbs.db
+.DS_Store

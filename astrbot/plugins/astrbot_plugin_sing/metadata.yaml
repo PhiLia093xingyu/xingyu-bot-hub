@@ -1,0 +1,7 @@
+name: astrbot_plugin_sing
+display_name: <BOT_NAME>的歌喉
+desc: 把一句中文歌词真的唱出来——逐字重绘音高、连成旋律，发成语音条
+help: 直接对机器人说"唱……"即可
+version: v0.1.0
+author: <BOT_NAME>
+repo: ""

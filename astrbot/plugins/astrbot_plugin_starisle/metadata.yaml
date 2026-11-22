@@ -1,0 +1,7 @@
+name: astrbot_plugin_starisle
+display_name: <BOT_NAME>的笔
+desc: 一支写人（/cast 让角色自己开口，靠语料指纹区分人物），一支写梦（/dream 用聊过的碎片拼一段梦，梦会连锁）
+help: /cast 看人物卡；/cast 名字 情境 让他说话；/cast reload 重读 cards.json；/dream 做梦；/dream 关键词 指定碎片；/dream list 回顾最近的梦
+version: v0.9.3
+author: <BOT_NAME>
+astrbot_version: ">=4.13.0"

@@ -1,0 +1,68 @@
+{
+    "enable": {
+        "description": "总开关",
+        "type": "bool",
+        "default": true
+    },
+    "only_bot_message": {
+        "description": "只管回应自己消息的表情",
+        "hint": "开启后只处理别人给我发的消息加表情的情况。",
+        "type": "bool",
+        "default": true
+    },
+    "include_remove": {
+        "description": "记录取消回应",
+        "type": "bool",
+        "default": false
+    },
+    "merge_window": {
+        "description": "同类合并窗口（秒）",
+        "hint": "同一条消息在这个时间内收到的表情会合并成一条记录，再决定要不要回话。",
+        "type": "int",
+        "slider": {
+            "min": 0,
+            "max": 60,
+            "step": 1
+        },
+        "default": 8
+    },
+    "reply_prob": {
+        "description": "开口回应概率",
+        "type": "float",
+        "slider": {
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+        },
+        "default": 0.5
+    },
+    "cooldown": {
+        "description": "回应冷却（秒）",
+        "hint": "同一个群两次开口的最小间隔。",
+        "type": "int",
+        "slider": {
+            "min": 0,
+            "max": 600,
+            "step": 10
+        },
+        "default": 120
+    },
+    "template": {
+        "description": "写入上下文的模板",
+        "hint": "占位符：{msg} {desc}",
+        "type": "text",
+        "default": "[表情回应] 「{msg}」收到了 {desc}"
+    },
+    "prompt": {
+        "description": "触发回应时的提示词",
+        "hint": "占位符：{msg} {desc}",
+        "type": "text",
+        "default": "我刚在群里发了一句「{msg}」，现在收到了这些表情回应：{desc}。请顺着这些表情的意思、结合上下文，自然地回应一句，20字以内，别解释你在做什么。"
+    },
+    "face_catalog": {
+        "description": "表情目录（id→名字）",
+        "hint": "SnowLuma 会缓存一份系统表情目录，读它就能把 297 认成 /拜谢。换了路径改这里。",
+        "type": "text",
+        "default": "C:\\ProgramData\\NapCatQQ Desktop\\components\\SnowLuma\\data\\sys-face-catalog.json"
+    }
+}

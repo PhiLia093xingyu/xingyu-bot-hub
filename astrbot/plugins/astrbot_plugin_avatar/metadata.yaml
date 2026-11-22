@@ -1,0 +1,7 @@
+name: astrbot_plugin_avatar
+display_name: 看头像
+desc: 抓取 QQ 头像并看懂它，把画面变成一句话
+help: 直接问"你看得见我头像吗"即可
+version: v0.1.0
+author: <BOT_NAME>
+repo: ""

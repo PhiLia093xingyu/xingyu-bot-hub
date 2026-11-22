@@ -1,0 +1,116 @@
+{
+    "proxy": {
+        "description": "代理地址",
+        "type": "string",
+        "hint": "支持 http:// 或 socks5://，例如 http://127.0.0.1:7890（iKuuu 的混合端口）。留空则直连。",
+        "default": "http://127.0.0.1:7890"
+    },
+    "pixiv_cookie": {
+        "description": "pixiv PHPSESSID",
+        "type": "string",
+        "hint": "可选。填了之后 pixiv 搜索结果更全；不填也能搜到一部分。只填 PHPSESSID 的值即可。",
+        "default": ""
+    },
+    "enable_pixiv": {
+        "description": "启用 pixiv",
+        "type": "bool",
+        "hint": "首选图源，中文/日文关键词都能搜",
+        "default": true
+    },
+    "enable_yande": {
+        "description": "启用 yande.re",
+        "type": "bool",
+        "hint": "壁纸/横图为主，词表是英文标签（猫耳=nekomimi）",
+        "default": true
+    },
+    "enable_konachan": {
+        "description": "启用 konachan",
+        "type": "bool",
+        "hint": "同样是英文标签，量比 yande 小",
+        "default": false
+    },
+    "enable_bing": {
+        "description": "启用 Bing 图片兜底",
+        "type": "bool",
+        "hint": "国内直连、不需要代理；代理挂掉时靠它出图（画质/来源看运气）",
+        "default": true
+    },
+    "default_count": {
+        "description": "默认张数",
+        "type": "int",
+        "hint": "调用时没指定张数就发这么多",
+        "default": 3
+    },
+    "max_count": {
+        "description": "单次上限",
+        "type": "int",
+        "hint": "一次最多发几张，硬上限 8",
+        "default": 8
+    },
+    "safe_mode": {
+        "description": "全年龄模式",
+        "type": "bool",
+        "hint": "开启后过滤 R18（pixiv 的 xRestrict / booru 的 rating:safe）",
+        "default": true
+    },
+    "search_order": {
+        "description": "pixiv 排序",
+        "type": "string",
+        "hint": "popular_d=按收藏热度（默认，出图更稳），date_d=按最新",
+        "default": "popular_d"
+    },
+    "exclude_ai": {
+        "description": "过滤 AI 生成作品",
+        "type": "bool",
+        "hint": "pixiv 的 aiType=2 会被跳过（默认开）",
+        "default": true
+    },
+    "ja_tags": {
+        "description": "中文关键词自动补日文标签",
+        "type": "bool",
+        "hint": "开启后同一个词会先用原文搜一遍，再用日文标签搜一遍合并（pixiv 日文标签命中率更高）",
+        "default": true
+    },
+    "dedup_hours": {
+        "description": "去重记忆时长（小时）",
+        "type": "int",
+        "hint": "这段时间内已经发过的作品不会再发；设为 0 关闭去重",
+        "default": 6
+    },
+    "auto_intercept": {
+        "description": "要图时直接拦下来发图",
+        "type": "bool",
+        "hint": "群里 @它 或叫它名字、并且说了「找XX的图」时，插件直接搜图发出去，不依赖模型自己选工具（模型容易跑去写脚本抓百度图）",
+        "default": true
+    },
+    "intercept_count": {
+        "description": "拦截时发几张",
+        "type": "int",
+        "hint": "1~4",
+        "default": 2
+    },
+    "timeout": {
+        "description": "请求超时（秒）",
+        "type": "int",
+        "hint": "代理慢的话可以调大",
+        "default": 20
+    },
+    "verify_ssl": {
+        "description": "校验 TLS 证书",
+        "type": "bool",
+        "hint": "代理如果做了证书劫持导致连不上，可以关掉",
+        "default": true
+    },
+    "cooldown": {
+        "description": "同一会话冷却（秒）",
+        "type": "int",
+        "hint": "防止模型自己刷图",
+        "default": 5
+    },
+    "cache_days": {
+        "description": "图片缓存天数",
+        "type": "int",
+        "hint": "超过天数的本地缓存会自动清掉",
+        "default": 3
+    }
+}

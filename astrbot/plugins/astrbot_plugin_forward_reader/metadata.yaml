@@ -1,0 +1,9 @@
+name: astrbot_plugin_forward_reader
+display_name: 合并转发读取器
+desc: 把 QQ「聊天记录 / 合并转发」卡片展开成文本，自动附在 LLM 请求里，也可用「/读转发」手动查看。
+version: v0.1.0
+author: <BOT_NAME>
+repo: ""
+astrbot_version: ">=4.9.2"
+support_platforms:
+  - aiocqhttp

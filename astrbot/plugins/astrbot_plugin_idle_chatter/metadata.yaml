@@ -1,0 +1,7 @@
+name: astrbot_plugin_idle_chatter
+display_name: 沉默之后
+desc: 会话安静太久时，自己找话题主动开口（不是定时广播，是看冷场时长决定说不说）
+help: /idle status 查看状态；/idle now 立刻试一次；/idle on|off 开关
+version: v0.9.3
+author: <BOT_NAME>
+astrbot_version: ">=4.13.0"

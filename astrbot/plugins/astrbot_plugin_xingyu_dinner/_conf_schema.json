@@ -1,0 +1,124 @@
+{
+    "enable": {
+        "description": "总开关",
+        "type": "bool",
+        "default": true
+    },
+    "triggers": {
+        "description": "触发暗号",
+        "hint": "消息里出现任意一个（忽略空格）就现画一张投喂卡。",
+        "type": "list",
+        "default": ["<BOT_NAME>吃饭啦", "<BOT_NAME>吃饭了", "投喂<BOT_NAME>"]
+    },
+    "qr_url": {
+        "description": "二维码指向的充值地址",
+        "hint": "默认 DeepSeek 充值页（扫码后需要登录 DeepSeek 账号）。",
+        "type": "string",
+        "default": "https://platform.deepseek.com/top_up"
+    },
+    "qr_image": {
+        "description": "换成自己的收款码图片",
+        "hint": "填图片路径（相对路径按插件数据目录 data/plugin_data/astrbot_plugin_xingyu_dinner 算），例如 pay.png。填了就用这张图，不再生成网址二维码。",
+        "type": "string",
+        "default": ""
+    },
+    "qr_caption": {
+        "description": "二维码下方大字",
+        "type": "string",
+        "default": "支付宝扫码 · 15 分钟内有效"
+    },
+    "qr_hint": {
+        "description": "二维码下方小字",
+        "type": "string",
+        "default": "扫码即付，直接充入 DeepSeek 账户"
+    },
+    "live_alipay": {
+        "description": "现场截支付宝付款码",
+        "hint": "开着就用本机已登录的 Edge 打开充值页、生成订单并截下付款码（15 分钟有效）。需要先在插件数据目录的 browser 里登录一次 DeepSeek。失败会自动退回网址二维码。",
+        "type": "bool",
+        "default": true
+    },
+    "alipay_amount": {
+        "description": "付款码金额（元）",
+        "hint": "DeepSeek 页面上的固定档位：10 / 20 / 50 / 100 / 300 / 500。",
+        "type": "int",
+        "slider": {"min": 10, "max": 500, "step": 10},
+        "default": 10
+    },
+    "browser_profile": {
+        "description": "浏览器配置目录",
+        "hint": "留空则用插件数据目录下的 browser 文件夹（就是登录一次.bat 用的那个）。",
+        "type": "string",
+        "default": ""
+    },
+    "qr_ttl": {
+        "description": "付款码缓存秒数",
+        "hint": "支付宝码 15 分钟有效，缓存比它短一点就行；到点会重新开一单截图。",
+        "type": "int",
+        "slider": {"min": 0, "max": 900, "step": 30},
+        "default": 600
+    },
+    "channel_label": {
+        "description": "卡片上显示的通道文字",
+        "type": "string",
+        "default": "platform.deepseek.com/top_up"
+    },
+    "card_title": {
+        "description": "卡片主标题",
+        "type": "string",
+        "default": "<BOT_NAME>吃饭啦"
+    },
+    "card_subtitle": {
+        "description": "卡片副标题",
+        "type": "string",
+        "default": "今日菜单 · DeepSeek 充值通道"
+    },
+    "card_footer": {
+        "description": "卡片页脚寄语",
+        "type": "string",
+        "default": "笔杆是魔杖，文字是咒语。"
+    },
+    "amount_min": {
+        "description": "饭钱下限（元）",
+        "type": "float",
+        "slider": {"min": 0, "max": 500, "step": 0.5},
+        "default": 6.0
+    },
+    "amount_max": {
+        "description": "饭钱上限（元）",
+        "type": "float",
+        "slider": {"min": 0, "max": 500, "step": 0.5},
+        "default": 30.0
+    },
+    "cooldown": {
+        "description": "同一会话冷却（秒）",
+        "hint": "0 表示不限制；冷却期内只当没听见，不刷屏。",
+        "type": "int",
+        "slider": {"min": 0, "max": 300, "step": 5},
+        "default": 20
+    },
+    "reply_text": {
+        "description": "附在卡片前的一句话",
+        "hint": "{amount} 会替换成饭钱，留空则只发图片。",
+        "type": "text",
+        "default": "唔，饭钱在这儿——{amount} 的额度，扫完记得说一声。"
+    },
+    "stop_event": {
+        "description": "命中后阻止后续回复",
+        "hint": "开着的话就只发卡，不再让大模型顺着再答一句。",
+        "type": "bool",
+        "default": true
+    },
+    "ignore_self": {
+        "description": "忽略自己发出的消息",
+        "hint": "机器人账号自己发的那句不理会。若你习惯用同一个账号跟机器人说话，请保持关闭。",
+        "type": "bool",
+        "default": false
+    },
+    "keep_files": {
+        "description": "本地最多保留多少张卡",
+        "type": "int",
+        "slider": {"min": 5, "max": 200, "step": 5},
+        "default": 30
+    }
+}

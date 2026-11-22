@@ -1,0 +1,7 @@
+name: astrbot_plugin_xingyu_dinner
+display_name: <BOT_NAME>吃饭啦
+desc: 对话里冒出「<BOT_NAME>吃饭啦」，就实时画一张 DeepSeek 充值二维码卡片发回会话。
+help: 群里或私聊说一句「<BOT_NAME>吃饭啦」即可；也可用 /投喂卡 手动要一张。
+version: v0.1.0
+author: <BOT_NAME>
+repo: ""

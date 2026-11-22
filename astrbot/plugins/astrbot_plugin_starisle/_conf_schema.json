@@ -1,0 +1,39 @@
+{
+  "enabled": {
+    "description": "总开关",
+    "type": "bool",
+    "default": true
+  },
+  "cards_file": {
+    "description": "人物卡文件路径",
+    "hint": "留空使用插件目录下的 data/cards.json。第一次运行会自动生成三张示例卡。",
+    "type": "string",
+    "default": ""
+  },
+  "extra_ban": {
+    "description": "额外禁用词句",
+    "hint": "不管哪个角色，说出这些就重写。一行或一项一个。",
+    "type": "list",
+    "default": ["作为一个", "总之", "总结一下"]
+  },
+  "history_size": {
+    "description": "做梦的原料：每个会话记多少条最近的话",
+    "type": "int",
+    "default": 40
+  },
+  "dream_seed_count": {
+    "description": "每场梦从聊天里捞几个意象碎片",
+    "type": "int",
+    "default": 10
+  },
+  "dream_max_chars": {
+    "description": "梦的长度上限（字）",
+    "type": "int",
+    "default": 160
+  },
+  "show_card_name": {
+    "description": "/cast 输出时带上「名字：」",
+    "type": "bool",
+    "default": true
+  }
+}

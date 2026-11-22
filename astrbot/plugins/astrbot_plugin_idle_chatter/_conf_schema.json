@@ -1,0 +1,159 @@
+{
+    "enabled": {
+        "description": "总开关",
+        "type": "bool",
+        "default": true
+    },
+    "idle_minutes": {
+        "description": "沉默多久后可以考虑开口",
+        "hint": "单位分钟。对方最后一次说话（或我最后一次说话）到现在超过这么久，才算冷场。",
+        "type": "int",
+        "default": 180
+    },
+    "min_gap_minutes": {
+        "description": "两次主动开口的最小间隔",
+        "type": "int",
+        "default": 120
+    },
+    "max_per_day": {
+        "description": "每个会话每天最多主动说几次",
+        "type": "int",
+        "default": 3
+    },
+    "check_interval_seconds": {
+        "description": "检查间隔（秒）",
+        "type": "int",
+        "default": 60
+    },
+    "speak_probability": {
+        "description": "条件满足时真的开口的概率",
+        "hint": "0~1。低一点更像人，高一点更像闹钟。",
+        "type": "float",
+        "default": 0.65
+    },
+    "quiet_hours": {
+        "description": "安静时段（不主动打扰）",
+        "hint": "例如 1-8 表示 1 点到 8 点不说；也支持 23-7 跨零点，或 0,1,2 这种枚举。留空表示不限制。",
+        "type": "string",
+        "default": "1-8"
+    },
+    "target_umos": {
+        "description": "只在这些会话里生效",
+        "hint": "填 unified_msg_origin，一行一个。留空表示自动绑定最近活跃的会话。",
+        "type": "list",
+        "default": []
+    },
+    "max_sessions": {
+        "description": "自动绑定时最多记住几个会话",
+        "type": "int",
+        "default": 5
+    },
+    "context_messages": {
+        "description": "找话题时回看几条上下文",
+        "hint": "从会话真实对话记录里取最近几条（一问一答），越大约得越远。",
+        "type": "int",
+        "default": 24
+    },
+    "system_prompt": {
+        "description": "生成主动消息用的人设",
+        "type": "text",
+        "default": "你是 <BOT_NAME>，一个十四岁的小作者，安静、偶尔调皮。现在对方已经很久没说话了，你想主动找他聊一句。要求：一到两句，短，口语，像朋友随口搭话；可以问问他在做什么、说说自己刚写的东西，或者接着上次的话题；不要提AI、助手、插件、系统；不要用括号写动作；不要长篇大论。"
+    },
+    "qzone_enabled": {
+        "description": "顺手翻 QQ 空间",
+        "hint": "开启后会定期读好友动态，看到有话说才回一句。依赖 astrbot_plugin_qzone_ultra 的守护进程。",
+        "type": "bool",
+        "default": false
+    },
+    "qzone_check_minutes": {
+        "description": "多久翻一次空间",
+        "type": "int",
+        "default": 60
+    },
+    "qzone_scope": {
+        "description": "看谁的动态",
+        "hint": "active 为好友动态（默认）；self 只看自己；留空也只会看自己。",
+        "type": "string",
+        "default": "active"
+    },
+    "qzone_limit": {
+        "description": "每次翻几条",
+        "type": "int",
+        "default": 5
+    },
+    "qzone_daily_max": {
+        "description": "每天最多评论几条",
+        "type": "int",
+        "default": 2
+    },
+    "qzone_post_enabled": {
+        "description": "翻完也发自己的说说",
+        "hint": "看到有意思的东西时，也可能冒出自己的一条说说，不复述别人的内容。",
+        "type": "bool",
+        "default": true
+    },
+    "qzone_post_daily_max": {
+        "description": "每天最多发几条说说",
+        "type": "int",
+        "default": 1
+    },
+    "qzone_post_probability": {
+        "description": "有念头时真发出去的概率",
+        "type": "float",
+        "default": 0.5
+    },
+    "qzone_post_max_len": {
+        "description": "说说最长几个字",
+        "type": "int",
+        "default": 80
+    },
+    "qzone_post_prompt": {
+        "description": "写说说用的人设",
+        "type": "text",
+        "default": ""
+    },
+    "qzone_max_age_hours": {
+        "description": "只理多新的说说",
+        "hint": "单位小时，太旧的不去打扰。",
+        "type": "int",
+        "default": 72
+    },
+    "qzone_like": {
+        "description": "评论时顺手点赞",
+        "type": "bool",
+        "default": true
+    },
+    "qzone_images": {
+        "description": "看图再说话",
+        "hint": "评论前会把说说里的图一起拿给模型看，图文都能接得上。",
+        "type": "bool",
+        "default": true
+    },
+    "qzone_image_count": {
+        "description": "每条最多看几张图",
+        "type": "int",
+        "default": 1
+    },
+    "qzone_comment_max_len": {
+        "description": "评论最长几个字",
+        "type": "int",
+        "default": 60
+    },
+    "qzone_daemon_port": {
+        "description": "守护进程端口",
+        "hint": "留 0 会自动去读 qzone_ultra 的运行时状态。",
+        "type": "int",
+        "default": 0
+    },
+    "qzone_secret": {
+        "description": "守护进程密钥",
+        "hint": "留空自动读取。",
+        "type": "string",
+        "default": ""
+    },
+    "qzone_prompt": {
+        "description": "判断要不要评论用的人设",
+        "type": "text",
+        "default": ""
+    }
+}

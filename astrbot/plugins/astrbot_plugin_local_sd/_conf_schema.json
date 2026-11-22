@@ -1,0 +1,74 @@
+{
+    "model_path": {
+        "description": "模型目录",
+        "type": "string",
+        "hint": "留空则用 AstrBot 数据目录下的 models/sd15（diffusers 格式）",
+        "default": ""
+    },
+    "torch_path": {
+        "description": "CUDA 版 torch 的安装目录",
+        "type": "string",
+        "hint": "worker 启动时会把这里插到 sys.path 最前面，优先于 venv 里的 CPU 版 torch",
+        "default": "D:\\astrbot-cuda"
+    },
+    "device": {
+        "description": "设备",
+        "type": "string",
+        "hint": "auto / cuda / cpu",
+        "default": "auto"
+    },
+    "style_prefix": {
+        "description": "风格前缀",
+        "type": "string",
+        "hint": "自动加在每条提示词前面；SD1.5 原版偏写实，加 \"anime illustration, \" 才是二次元画风。留空则不加",
+        "default": "anime illustration, "
+    },
+    "steps": {
+        "description": "默认采样步数",
+        "type": "int",
+        "hint": "24 步够用，30+ 更细但更慢",
+        "default": 24
+    },
+    "size": {
+        "description": "默认边长",
+        "type": "int",
+        "hint": "512 是 SD1.5 的原生分辨率，768 容易画崩",
+        "default": 512
+    },
+    "guidance": {
+        "description": "CFG 强度",
+        "type": "float",
+        "hint": "7~8 之间比较稳",
+        "default": 7.5
+    },
+    "negative": {
+        "description": "默认负面提示词",
+        "type": "string",
+        "hint": "留空则用内置的一套（低质量、水印、多余手指等）",
+        "default": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, jpeg artifacts, signature, watermark, username, blurry, ai-generated"
+    },
+    "timeout": {
+        "description": "单张超时（秒）",
+        "type": "int",
+        "hint": "画图推理的超时时间",
+        "default": 240
+    },
+    "load_timeout": {
+        "description": "模型加载超时（秒）",
+        "type": "int",
+        "hint": "第一次画图要加载模型，冷启动慢可以调大",
+        "default": 300
+    },
+    "max_size": {
+        "description": "最大边长",
+        "type": "int",
+        "hint": "硬上限 768",
+        "default": 768
+    },
+    "cooldown": {
+        "description": "同一会话冷却（秒）",
+        "type": "int",
+        "hint": "防止模型自己刷图",
+        "default": 10
+    }
+}

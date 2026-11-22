@@ -1,0 +1,10 @@
+name: astrbot_plugin_reaction_memo
+display_name: 表情回应入上下文
+desc: 把群里的「表情回应」事件记录下来并写入对话上下文，让 bot 记得谁给哪条消息加了什么表情
+help: 无指令，装上即生效
+version: v1.0.0
+author: <BOT_NAME>
+repo: local
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.13.0"

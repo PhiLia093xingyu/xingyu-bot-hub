@@ -1,0 +1,42 @@
+{
+    "enable_auto_expand": {
+        "description": "自动展开合并转发",
+        "hint": "开启后，消息里带「聊天记录 / 合并转发」卡片时，会先把里面的内容展开成文本，附在 LLM 请求里。",
+        "type": "bool",
+        "default": true
+    },
+    "expand_replied": {
+        "description": "展开被引用的转发",
+        "hint": "开启后，引用（回复）一条合并转发消息时也会展开它。",
+        "type": "bool",
+        "default": true
+    },
+    "max_nodes": {
+        "description": "最多展开条数",
+        "hint": "单条转发最多展开多少条子消息，超出的部分只留一行提示。",
+        "type": "int",
+        "default": 200,
+        "slider": {
+            "min": 1,
+            "max": 1000,
+            "step": 10
+        }
+    },
+    "show_full_in_chat": {
+        "description": "指令里回显全文",
+        "hint": "默认关闭：/读转发 只回一句「读到了」，内容只进上下文，不刷群。",
+        "type": "bool",
+        "default": false
+    },
+    "max_chars": {
+        "description": "单次注入字数上限",
+        "hint": "超过就截断，避免把上下文撑爆。填 0 表示不限制。",
+        "type": "int",
+        "default": 4000,
+        "slider": {
+            "min": 0,
+            "max": 20000,
+            "step": 500
+        }
+    }
+}

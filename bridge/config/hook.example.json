@@ -1,0 +1,25 @@
+{
+  "hook": {
+    "api_base": "http://127.0.0.1:30001",
+    "callback_host": "127.0.0.1",
+    "callback_port": 30002,
+    "callback_path": "/event",
+    "self_wxid": "<YOUR_WECHAT_WXID>",
+    "self_nickname": "<YOUR_WECHAT_NICKNAME>"
+  },
+  "onebot": {
+    "self_id": 100000001,
+    "report_self_message": false,
+    "ws_server": {
+      "host": "127.0.0.1",
+      "port": 3002,
+      "token": "<RANDOM_TOKEN_FOR_WS_CLIENTS>"
+    },
+    "reverse": {
+      "url": "ws://127.0.0.1:24875/ws",
+      "token": "<ASTRBOT_WECHAT_PLATFORM_TOKEN>",
+      "reconnect_seconds": 5
+    }
+  },
+  "logging": { "level": "INFO", "file": "logs/hookbridge.log" }
+}
