@@ -2,7 +2,7 @@
 
 把 **微信 4.1.10.27** 通过开源 hook（`version.dll`）接成 **OneBot v11**，对接 **AstrBot**，实现微信聊天机器人；另附可选的 QQ 侧（NapCat Desktop + SnowLuma）配置说明。
 
-> 仅供学习/自用。仓库**不包含**微信、QQ、NapCat、SnowLuma 的任何二进制或安装包，这些文件请通过下方网盘链接获取。
+> 仅供学习/自用。仓库源码不包含微信、QQ、NapCat、SnowLuma 的二进制；微信整合包见 Release 附件，QQ 客户端请从官网下载。
 
 ## 功能
 
