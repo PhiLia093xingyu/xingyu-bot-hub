@@ -37,7 +37,7 @@ QQ 侧（可选）：`QQ NT ← NapCat Desktop（UI）← SnowLuma（OneBot 后�
 
 | 文件 | 大小 | 说明 | 下载 |
 |---|---|---|---|
-| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | 微信本体 + hook + 桥 + AstrBot + 文档（已脱敏） | [GitHub Release 下载](https://github.com/PhiLia093xingyu/WeChatBotStack/releases/download/v1.0.0/WeChatBotStack_%E6%98%9F%E5%B1%BF_v1.zip) |
+| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | 微信本体 + hook + 桥 + AstrBot + 文档（已脱敏） | [GitHub Release 下载](https://github.com/PhiLia093xingyu/WeChatBotStack/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
 | QQ 客户端 | — | QQ 官方安装包（腾讯官网） | [QQ 官方下载](https://im.qq.com/pcqq) |
 
 > `QQBotStack_星屿_v2.zip`（397 MB，含 NapCat/SnowLuma 发行文件）因闭源组件许可原因不公开挂 Release，需要可联系作者。
