@@ -10,11 +10,12 @@
 - `docs/`：架构、安装、配置、排障、安全文档
 - `optional-qq/`：QQ 侧（NapCat/SnowLuma）说明与配置示例
 
-## 发行包（网盘，不在仓库内）
+## 发行包（Release 附件）
 
 | 文件 | 大小 | 下载 |
 |---|---|---|
-| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | [GitHub Release 附件](https://github.com/PhiLia093xingyu/xingyu-bot-hub/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
+| `WeChatBotStack_v1.zip` | 423.7 MB | [Release 下载](https://github.com/PhiLia093xingyu/xingyu-bot-hub/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
+| `QQBotStack_v2.zip` | 97.1 MB（不含 QQ 本体） | [Release 下载](https://github.com/PhiLia093xingyu/xingyu-bot-hub/releases/download/v1.0.0/QQBotStack_v2.zip) |
 | QQ 客户端 | — | [QQ 官网](https://im.qq.com/pcqq) |
 
 
