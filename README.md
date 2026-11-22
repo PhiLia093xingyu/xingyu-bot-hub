@@ -1,8 +1,8 @@
-# WeChatBotStack · 微信 Hook 机器人框架（作者：星屿）
+# 星屿的入口 · WeChatBotStack（微信/QQ 机器人）
 
 把 **微信 4.1.10.27** 通过开源 hook（`version.dll`）接成 **OneBot v11**，对接 **AstrBot**，实现微信聊天机器人；另附可选的 QQ 侧（NapCat Desktop + SnowLuma）配置说明。
 
-> 仅供学习/自用。仓库源码不包含微信、QQ、NapCat、SnowLuma 的二进制；微信整合包见 Release 附件，QQ 客户端请从官网下载。
+> 仅供学习/自用。仓库源码不包含微信、QQ、NapCat、SnowLuma 的二进制；两个整合包都在 Release 附件里，QQ 客户端请从官网下载。
 
 ## 功能
 
@@ -37,16 +37,17 @@ QQ 侧（可选）：`QQ NT ← NapCat Desktop（UI）← SnowLuma（OneBot 后�
 
 | 文件 | 大小 | 说明 | 下载 |
 |---|---|---|---|
-| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | 微信本体 + hook + 桥 + AstrBot + 文档（已脱敏） | [GitHub Release 下载](https://github.com/PhiLia093xingyu/WeChatBotStack/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
+| `WeChatBotStack_v1.zip` | 423.7 MB | 微信本体 + hook + 桥 + AstrBot + 文档（已脱敏） | [Release 下载](https://github.com/PhiLia093xingyu/xingyu-bot-hub/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
+| `QQBotStack_v2.zip` | 397.1 MB | QQ 安装器 + NapCat 外壳/组件 + SnowLuma 发行文件 + 文档（可选） | [Release 下载](https://github.com/PhiLia093xingyu/xingyu-bot-hub/releases/download/v1.0.0/QQBotStack_v2.zip) |
 | QQ 客户端 | — | QQ 官方安装包（腾讯官网） | [QQ 官方下载](https://im.qq.com/pcqq) |
 
-> `QQBotStack_星屿_v2.zip`（397 MB，含 NapCat/SnowLuma 发行文件）因闭源组件许可原因不公开挂 Release，需要可联系作者。
+> Release 附件名是 ASCII（`WeChatBotStack_v1.zip` / `QQBotStack_v2.zip`），本地文件名带「星屿」。
 
 SHA256：
 
 ```
-WeChatBotStack_星屿_v1.zip  FCCDDB4EB331B802DDA8A418611DC26C7792CD1DBB19D6C553272C860C73622A
-QQBotStack_星屿_v2.zip      00A0EA4E6CF005F435819CE1C13A425515F55970054E4ADC29C47D111A39FEAF
+WeChatBotStack_v1.zip       FCCDDB4EB331B802DDA8A418611DC26C7792CD1DBB19D6C553272C860C73622A
+QQBotStack_v2.zip           00A0EA4E6CF005F435819CE1C13A425515F55970054E4ADC29C47D111A39FEAF
 ```
 
 ## 星屿的 QQ 入口
@@ -66,7 +67,7 @@ AstrBot（平台 qq / aiocqhttp）
 
 - QQ 客户端：从 [QQ 官网](https://im.qq.com/pcqq) 安装；
 - NapCat Desktop + SnowLuma：见 `optional-qq/` 的配置示例与说明；
-- 本仓库不附带上述闭源二进制，QQ 侧离线包 `QQBotStack_星屿_v2.zip` 请联系作者获取。
+- QQ 侧离线包见 Release 附件 `QQBotStack_v2.zip`。
 
 ## 快速开始
 

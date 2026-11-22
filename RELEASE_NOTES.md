@@ -14,16 +14,16 @@
 
 | 文件 | 大小 | 下载 |
 |---|---|---|
-| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | [GitHub Release 附件](https://github.com/PhiLia093xingyu/WeChatBotStack/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
+| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | [GitHub Release 附件](https://github.com/PhiLia093xingyu/xingyu-bot-hub/releases/download/v1.0.0/WeChatBotStack_v1.zip) |
 | QQ 客户端 | — | [QQ 官网](https://im.qq.com/pcqq) |
 
-`QQBotStack_星屿_v2.zip`（含 NapCat/SnowLuma 闭源发行文件）不公开挂 Release，需要请联系作者。
+
 
 SHA256：
 
 ```
-WeChatBotStack_星屿_v1.zip  FCCDDB4EB331B802DDA8A418611DC26C7792CD1DBB19D6C553272C860C73622A
-QQBotStack_星屿_v2.zip      00A0EA4E6CF005F435819CE1C13A425515F55970054E4ADC29C47D111A39FEAF
+WeChatBotStack_v1.zip       FCCDDB4EB331B802DDA8A418611DC26C7792CD1DBB19D6C553272C860C73622A
+QQBotStack_v2.zip          00A0EA4E6CF005F435819CE1C13A425515F55970054E4ADC29C47D111A39FEAF
 ```
 
 ## 已知限制
