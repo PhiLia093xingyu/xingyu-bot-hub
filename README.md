@@ -33,12 +33,14 @@ AstrBot 4.28.1（平台 wechat）
 
 QQ 侧（可选）：`QQ NT ← NapCat Desktop（UI）← SnowLuma（OneBot 后端）→ AstrBot:24874`。
 
-## 下载（网盘）
+## 下载
 
 | 文件 | 大小 | 说明 | 下载 |
 |---|---|---|---|
-| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | 微信本体 + hook + 桥 + AstrBot + 文档（已脱敏） | [蓝奏云](<待填：微信包链接>) |
-| `QQBotStack_星屿_v2.zip` | 397.1 MB | QQ 安装器 + NapCat 外壳/组件 + SnowLuma 发行文件 + 文档（可选） | [蓝奏云](<待填：QQ 包链接>) |
+| `WeChatBotStack_星屿_v1.zip` | 423.7 MB | 微信本体 + hook + 桥 + AstrBot + 文档（已脱敏） | [GitHub Release 下载](https://github.com/PhiLia093xingyu/WeChatBotStack/releases/download/v1.0.0/WeChatBotStack_%E6%98%9F%E5%B1%BF_v1.zip) |
+| QQ 客户端 | — | QQ 官方安装包（腾讯官网） | [QQ 官方下载](https://im.qq.com/pcqq) |
+
+> `QQBotStack_星屿_v2.zip`（397 MB，含 NapCat/SnowLuma 发行文件）因闭源组件许可原因不公开挂 Release，需要可联系作者。
 
 SHA256：
 
@@ -47,7 +49,24 @@ WeChatBotStack_星屿_v1.zip  FCCDDB4EB331B802DDA8A418611DC26C7792CD1DBB19D6C553
 QQBotStack_星屿_v2.zip      00A0EA4E6CF005F435819CE1C13A425515F55970054E4ADC29C47D111A39FEAF
 ```
 
-> 网盘链接请自行替换 `<待填…>`；两个包都超过 GitHub 单文件 100 MB 限制，因此不放在 git 仓库里。
+## 星屿的 QQ 入口
+
+> NapCat 与 SnowLuma 原本是开源项目，后来因商业化/资本介入转向闭源并删库，源码已无法获取，所以现在只能打包它们的官方发行文件（二进制/JS bundle）。
+
+```
+QQ NT（官方客户端）
+   ▲
+NapCat Desktop（UI 外壳）
+   ▲
+SnowLuma（OneBot 后端，闭源发行文件）
+   │ 反向 WS 127.0.0.1:24874/ws
+   ▼
+AstrBot（平台 qq / aiocqhttp）
+```
+
+- QQ 客户端：从 [QQ 官网](https://im.qq.com/pcqq) 安装；
+- NapCat Desktop + SnowLuma：见 `optional-qq/` 的配置示例与说明；
+- 本仓库不附带上述闭源二进制，QQ 侧离线包 `QQBotStack_星屿_v2.zip` 请联系作者获取。
 
 ## 快速开始
 
