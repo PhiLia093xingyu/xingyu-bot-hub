@@ -437,6 +437,7 @@ class OneBotCore:
         self.recent: Dict[int, dict] = {}
         self.connected_reverse = False
         self.reverse_ws = None
+        self.pending_events: List[tuple] = []
         self.started_at = time.time()
         self.loop: Optional[asyncio.AbstractEventLoop] = None
 
@@ -449,16 +450,54 @@ class OneBotCore:
         targets = list(self.subscribers)
         if self.reverse_ws is not None:
             targets.append(self.reverse_ws)
+        if not targets:
+            self._queue_pending(payload)
+            return
+        sent = False
         dead = []
         for ws in targets:
             try:
                 await ws.send(payload)
+                sent = True
             except Exception:
                 dead.append(ws)
         for ws in dead:
             self.subscribers.discard(ws)
             if self.reverse_ws is ws:
                 self.reverse_ws = None
+        if not sent:
+            self._queue_pending(payload)
+
+    def _queue_pending(self, payload: str) -> None:
+        self.pending_events.append((time.time(), payload))
+        if len(self.pending_events) > 300:
+            self.pending_events = self.pending_events[-300:]
+
+    async def flush_pending(self) -> int:
+        if not self.pending_events:
+            return 0
+        targets = list(self.subscribers)
+        if self.reverse_ws is not None:
+            targets.append(self.reverse_ws)
+        if not targets:
+            return 0
+        now = time.time()
+        items = [p for (t, p) in self.pending_events if now - t <= 600]
+        self.pending_events.clear()
+        sent = 0
+        for payload in items:
+            for ws in list(targets):
+                try:
+                    await ws.send(payload)
+                    sent += 1
+                    break
+                except Exception:
+                    self.subscribers.discard(ws)
+                    if self.reverse_ws is ws:
+                        self.reverse_ws = None
+        if sent:
+            LOG.info("flushed %d pending events after reconnect", sent)
+        return sent
 
     async def handle_action(self, action: str, params: dict) -> dict:
         try:
@@ -711,6 +750,10 @@ class WsServer:
             LOG.info("ws server: client connected")
             self.core.subscribers.add(ws)
             try:
+                await self.core.flush_pending()
+            except Exception:
+                pass
+            try:
                 async for raw in ws:
                     try:
                         payload = json.loads(raw)
@@ -752,6 +795,10 @@ class ReverseClient:
                     self.core.connected_reverse = True
                     self.core.reverse_ws = ws
                     LOG.info("reverse WS connected: %s", url)
+                    try:
+                        await self.core.flush_pending()
+                    except Exception:
+                        pass
                     await self._lifecycle(ws)
                     hb = asyncio.create_task(self._heartbeat(ws))
                     try:
